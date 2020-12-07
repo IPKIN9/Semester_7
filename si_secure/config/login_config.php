@@ -18,8 +18,8 @@ if (isset($_POST['Login'])) {
     if (!hash_verify($password, $fPassword)) {
         die("bangke");
     }
-    $_SESSION["username"] = $username;
     session_start();
+    $_SESSION["username"] = $username;
     header("Location: ../view/admin/dashboard.php");
     $conn->close();
 }
